@@ -1,0 +1,467 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f2f4f8;
+}
+
+/* ================= HEADER ================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #111827, #1f2937);
+  color: white;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header input {
+  padding: 10px 14px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  width: 240px;
+  transition: 0.3s;
+}
+
+.header input:focus {
+  transform: scale(1.05);
+}
+
+/* ================= CART BADGE ================= */
+.cart-badge {
+  background: #22c55e;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ================= PRODUCTOS GRID ================= */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  padding: 20px;
+}
+
+/* ================= PRODUCT CARD ================= */
+.card-producto {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+}
+
+.card-producto:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.card-producto img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card-producto h3 {
+  margin: 10px 12px 4px;
+}
+
+.card-producto p {
+  margin: 0 12px;
+  color: #555;
+  font-size: 13px;
+}
+
+.card-producto b {
+  display: block;
+  margin: 10px 12px;
+  font-size: 18px;
+  color: #16a34a;
+}
+
+.stock {
+  margin: 0 12px;
+  color: #16a34a;
+  font-weight: bold;
+}
+
+.agotado {
+  margin: 0 12px;
+  color: #dc2626;
+  font-weight: bold;
+}
+
+/* ================= BOTÓN PRODUCTO ================= */
+.card-producto button {
+  width: calc(100% - 24px);
+  margin: 12px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.card-producto button:hover {
+  transform: scale(1.03);
+}
+
+.card-producto button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* ================= CARRITO ================= */
+.carrito {
+  position: fixed;
+  right: 20px;
+  top: 100px;
+  width: 280px;
+  background: white;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.carrito h3 {
+  margin-top: 0;
+}
+
+.carrito-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #eee;
+}
+
+.carrito-item button {
+  border: none;
+  background: crimson;
+  color: white;
+  border-radius: 6px;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+
+.btn-pagar {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.2s;
+}
+
+.btn-pagar:hover {
+  transform: scale(1.03);
+}
+
+/* ================= MODAL ================= */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-box {
+  background: white;
+  padding: 22px;
+  border-radius: 16px;
+  width: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  animation: pop 0.2s ease;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-box h3 {
+  margin-top: 0;
+}
+
+/* ================= BOTONES MODAL ================= */
+.modal-box button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modal-box button:hover {
+  transform: scale(1.05);
+}
+.btn-top {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255,255,255,0.12);
+  color: white;
+  transition: 0.2s;
+}
+
+.btn-top:hover {
+  transform: scale(1.05);
+}
+
+.btn-top.active {
+  background: #22c55e;
+}
+
+.btn-top.back {
+  background: #3b82f6;
+}
+
+.ok-btn {
+  background: #16a34a;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.cancel-btn {
+  background: crimson;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  flex: 1;
+}
+
+/* 🛒 EVITA QUE TAPe PRODUCTOS */
+.productos-grid {
+  margin-right: 320px;
+}
+
+@media (max-width: 900px) {
+  .carrito {
+    position: static;
+    width: 100%;
+    margin: 20px;
+  }
+
+  .productos-grid {
+    margin-right: 0;
+  }
+}
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.profile-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  animation: fadeIn 0.3s ease;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+}
+
+.profile-card h2 {
+  margin: 10px 0;
+}
+
+.profile-card p {
+  color: #555;
+  margin: 5px 0;
+}
+
+.btn-back {
+  margin-top: 20px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 12px;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-back:hover {
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+
+.profile-card {
+  width: 340px;
+  background: white;
+  border-radius: 22px;
+  padding: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  text-align: center;
+  animation: fadeIn 0.25s ease;
+}
+
+.avatar {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.profile-name {
+  margin: 5px 0;
+}
+
+.profile-sub {
+  color: gray;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+/* INFO GRID */
+.profile-info {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.info-row span {
+  color: #666;
+}
+
+/* BADGES */
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge.rol {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.badge.active {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.badge.inactive {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* BOTÓN */
+.btn-back {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-back:hover {
+  transform: scale(1.03);
+}
+
+/* ANIMACIÓN */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
