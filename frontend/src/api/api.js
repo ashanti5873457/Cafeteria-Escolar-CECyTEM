@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://cafeteria-online.onrender.com/api",
+  baseURL: "https://cafeteria-escolar-cecytem-1.onrender.com",
   headers: {
     "Content-Type": "application/json",
   },
