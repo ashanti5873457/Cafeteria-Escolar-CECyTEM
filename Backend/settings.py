@@ -116,5 +116,18 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://cafeteria-escolar-cecytem-1.onrender.com",
 ]
+CORS_ALLOW_METHODS = [
+    "GET",
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE",
+    "OPTIONS"
+]
+
+CORS_ALLOW_HEADERS = [
+    "authorization",
+    "content-type",
+]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
