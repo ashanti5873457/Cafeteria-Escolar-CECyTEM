@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-5sm8%$m$kp*3$ygez5q(lrig5jo^o$v#pnbw$bs@te!=b5m(_n'
 DEBUG = True
 
-ALLOWED_HOSTS = ["cafeteria-online.onrender.com"]
+ALLOWED_HOSTS = ["*"]
 
 # =========================
 # APPS
