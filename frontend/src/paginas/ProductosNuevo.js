@@ -39,8 +39,8 @@ function ProductosNuevo() {
   // ======================
   const cargarProductos = async () => {
     try {
-      const res = await API.get("productos/");
-      setProductos(res.data || []);
+        const res = await API.get("/api/productos/");
+        setProductos(res.data || []);
     } catch (error) {
       console.log(error.message);
     }
@@ -48,7 +48,7 @@ function ProductosNuevo() {
 
   const cargarCategorias = async () => {
     try {
-      const res = await API.get("categorias/");
+     const res = await API.get("/api/categorias/");
       setCategorias(res.data || []);
     } catch (error) {
       console.log(error.message);

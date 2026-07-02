@@ -23,13 +23,19 @@ function Cliente() {
   }, []);
 
   const cargarProductos = async () => {
-    try {
-      const res = await API.get("productos/");
-      setProductos(res.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  try {
+    const res = await API.get("productos/");
+
+    console.log("Respuesta completa:", res);
+    console.log("Datos:", res.data);
+    console.log("Cantidad:", res.data.length);
+
+    setProductos(res.data);
+  } catch (error) {
+    console.error("Error:", error);
+    console.error("Respuesta:", error.response);
+  }
+};
 
   const productosFiltrados = productos.filter((p) =>
     p.nombre.toLowerCase().includes(busqueda.toLowerCase())

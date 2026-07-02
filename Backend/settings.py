@@ -10,9 +10,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SEGURIDAD
 # =========================
 SECRET_KEY = 'django-insecure-5sm8%$m$kp*3$ygez5q(lrig5jo^o$v#pnbw$bs@te!=b5m(_n'
-DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+DEBUG = False
+
+ALLOWED_HOSTS = [
+    "cafeteria-escolar-cecy.onrender.com",
+    "localhost",
+]
 
 # =========================
 # APPS
@@ -25,8 +29,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'rest_framework',
     'rest_framework.authtoken',
+
     'bibliotecaapp',
 ]
 
@@ -35,6 +41,7 @@ INSTALLED_APPS = [
 # =========================
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -46,6 +53,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Backend.urls'
 
+# =========================
+# TEMPLATES
+# =========================
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -76,6 +86,7 @@ DATABASES = {
         'PORT': '27701',
     }
 }
+
 # =========================
 # VALIDACIÓN PASSWORD
 # =========================
@@ -86,6 +97,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
+# =========================
+# REST FRAMEWORK
+# =========================
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -93,7 +107,7 @@ REST_FRAMEWORK = {
 }
 
 # =========================
-# INTERNACIONALIZACIÓN (CORRECTO)
+# INTERNACIONALIZACIÓN
 # =========================
 LANGUAGE_CODE = 'es-mx'
 
@@ -101,6 +115,7 @@ TIME_ZONE = "America/Mexico_City"
 
 USE_I18N = True
 USE_TZ = False
+
 # =========================
 # STATIC
 # =========================
@@ -108,28 +123,13 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # =========================
-# CORS
+# CORS (CORREGIDO)
 # =========================
 CORS_ALLOW_ALL_ORIGINS = True
+
 CORS_ALLOW_CREDENTIALS = True
 
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "https://cafeteria-escolar-cecytem-1.onrender.com",
-]
-CORS_ALLOW_METHODS = [
-    "GET",
-    "POST",
-    "PUT",
-    "PATCH",
-    "DELETE",
-    "OPTIONS"
-]
-
-CORS_ALLOW_HEADERS = [
-    "authorization",
-    "content-type",
-]
-
+# =========================
+# AUTO FIELD
+# =========================
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
